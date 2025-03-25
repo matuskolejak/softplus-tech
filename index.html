@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoftPlus Tech - Software Solutions</title>
+    <title>SoftPlus Tech - Powering The Future</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #4361ee;
-            --secondary-color: #3a0ca3;
-            --light-color: #f8f9fa;
-            --dark-color: #212529;
-            --success-color: #4cc9f0;
-            --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --primary-color: #fff;
+            --secondary-color: #f0f0f0;
+            --dark-color: #141414;
+            --accent-color: #3a86ff;
+            --font-primary: 'Montserrat', sans-serif;
         }
         
         * {
@@ -24,14 +26,13 @@
             font-family: var(--font-primary);
             line-height: 1.6;
             color: var(--dark-color);
-            background-color: var(--light-color);
+            background-color: #fff;
         }
         
         header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background-color: var(--dark-color);
             color: white;
             padding: 2rem 0;
-            text-align: center;
         }
         
         .container {
@@ -47,14 +48,34 @@
             padding: 1rem 0;
         }
         
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: white;
+        .logo-container {
+            display: flex;
+            align-items: center;
         }
         
-        .logo span {
-            color: var(--success-color);
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            margin-right: 15px;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-name {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 1px;
+        }
+        
+        .logo-tagline {
+            font-size: 0.9rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            color: white;
         }
         
         .nav-menu {
@@ -71,177 +92,164 @@
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
         }
         
         .nav-menu a:hover {
-            color: var(--success-color);
+            color: var(--accent-color);
         }
         
         .hero {
             text-align: center;
-            padding: 3rem 0;
+            padding: 5rem 0;
+            background-color: var(--dark-color);
         }
         
         .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
         }
         
         .hero p {
             font-size: 1.2rem;
             max-width: 700px;
-            margin: 0 auto 2rem;
+            margin: 0 auto 2.5rem;
             color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+            letter-spacing: 0.5px;
         }
         
         .btn {
             display: inline-block;
-            background-color: var(--success-color);
-            color: var(--dark-color);
-            padding: 0.8rem 1.8rem;
-            border-radius: 5px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 3px;
             text-decoration: none;
             font-weight: 600;
             transition: background-color 0.3s, transform 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
         }
         
         .btn:hover {
-            background-color: #7bdff2;
+            background-color: #2a75f3;
             transform: translateY(-3px);
         }
         
-        .features {
+        .section {
             padding: 5rem 0;
-            background-color: white;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
         
         .section-title h2 {
-            font-size: 2rem;
-            color: var(--secondary-color);
+            font-size: 2.2rem;
+            color: var(--dark-color);
             margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
         
         .section-title p {
-            color: #6c757d;
+            color: #505050;
             max-width: 600px;
             margin: 0 auto;
-        }
-        
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .feature-card {
-            background-color: var(--light-color);
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        .feature-icon {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-        }
-        
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--secondary-color);
-        }
-        
-        .about {
-            padding: 5rem 0;
-            background-color: var(--light-color);
-        }
-        
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-        
-        .about-content h2 {
-            font-size: 2rem;
-            color: var(--secondary-color);
-            margin-bottom: 1.5rem;
-        }
-        
-        .about-content p {
-            margin-bottom: 1.5rem;
-        }
-        
-        .about-img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            font-weight: 300;
         }
         
         .services {
-            padding: 5rem 0;
-            background-color: white;
+            background-color: #f9f9f9;
         }
         
-        .service-grid {
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
         
         .service-card {
-            background-color: var(--light-color);
-            border-radius: 10px;
+            background-color: white;
+            border-radius: 5px;
             padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s, box-shadow 0.3s;
         }
         
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
         
         .service-icon {
-            width: 80px;
-            height: 80px;
-            background-color: rgba(67, 97, 238, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-        }
-        
-        .service-icon i {
-            font-size: 2rem;
-            color: var(--primary-color);
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1.5rem;
         }
         
         .service-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 1rem;
-            color: var(--secondary-color);
+            color: var(--dark-color);
+            font-weight: 600;
+        }
+        
+        .service-card p {
+            color: #505050;
+            font-weight: 300;
+        }
+        
+        .about {
+            background-color: white;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-content h2 {
+            font-size: 2.2rem;
+            color: var(--dark-color);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .about-content p {
+            margin-bottom: 1.5rem;
+            color: #505050;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+        
+        .about-img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .network-icon {
+            width: 100%;
+            max-width: 400px;
         }
         
         .cta {
             padding: 5rem 0;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background-color: var(--dark-color);
             color: white;
             text-align: center;
         }
@@ -249,17 +257,20 @@
         .cta h2 {
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
         
         .cta p {
             max-width: 700px;
             margin: 0 auto 2rem;
             font-size: 1.2rem;
+            font-weight: 300;
         }
         
         .btn-light {
             background-color: white;
-            color: var(--primary-color);
+            color: var(--dark-color);
         }
         
         .btn-light:hover {
@@ -267,9 +278,9 @@
         }
         
         footer {
-            background-color: var(--dark-color);
+            background-color: #0c0c0c;
             color: white;
-            padding: 3rem 0;
+            padding: 4rem 0 2rem;
         }
         
         .footer-grid {
@@ -279,14 +290,17 @@
         }
         
         .footer-col h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 1.5rem;
-            color: var(--success-color);
+            color: white;
+            font-weight: 600;
+            letter-spacing: 1px;
         }
         
         .footer-col p {
             margin-bottom: 1rem;
             color: rgba(255, 255, 255, 0.7);
+            font-weight: 300;
         }
         
         .footer-links {
@@ -301,10 +315,11 @@
             color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
             transition: color 0.3s;
+            font-weight: 300;
         }
         
         .footer-links a:hover {
-            color: var(--success-color);
+            color: white;
         }
         
         .copyright {
@@ -312,7 +327,9 @@
             padding-top: 2rem;
             margin-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 300;
+            font-size: 0.9rem;
         }
         
         @media (max-width: 768px) {
@@ -323,112 +340,151 @@
             .nav-menu {
                 display: none;
             }
+            
+            .logo-name {
+                font-size: 1.8rem;
+            }
+            
+            .logo-tagline {
+                font-size: 0.7rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <nav class="container">
-            <div class="logo">Soft<span>Plus</span> Tech</div>
+            <div class="logo-container">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="100" r="20" fill="white"/>
+                    <circle cx="50" cy="80" r="15" fill="white"/>
+                    <circle cx="150" cy="80" r="15" fill="white"/>
+                    <circle cx="70" cy="150" r="18" fill="white"/>
+                    <circle cx="130" cy="150" r="18" fill="white"/>
+                    <circle cx="170" cy="120" r="13" fill="white"/>
+                    <circle cx="30" cy="120" r="13" fill="white"/>
+                    <line x1="100" y1="100" x2="50" y2="80" stroke="white" stroke-width="2"/>
+                    <line x1="100" y1="100" x2="150" y2="80" stroke="white" stroke-width="2"/>
+                    <line x1="100" y1="100" x2="70" y2="150" stroke="white" stroke-width="2"/>
+                    <line x1="100" y1="100" x2="130" y2="150" stroke="white" stroke-width="2"/>
+                    <line x1="100" y1="100" x2="170" y2="120" stroke="white" stroke-width="2"/>
+                    <line x1="100" y1="100" x2="30" y2="120" stroke="white" stroke-width="2"/>
+                </svg>
+                <div class="logo-text">
+                    <div class="logo-name">SoftPlus Tech</div>
+                    <div class="logo-tagline">POWERING THE FUTURE</div>
+                </div>
+            </div>
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
         
         <div class="hero container" id="home">
-            <h1>Innovative Software Solutions for Your Business</h1>
-            <p>We build custom software solutions that help businesses streamline operations, boost productivity, and achieve digital transformation.</p>
+            <h1>Innovative Technology Solutions</h1>
+            <p>Building the digital future through innovative software and technology services for businesses of all sizes.</p>
             <a href="#contact" class="btn">Get Started</a>
         </div>
     </header>
     
-    <section class="features" id="features">
+    <section class="section services" id="services">
         <div class="container">
             <div class="section-title">
-                <h2>Why Choose Us</h2>
-                <p>We deliver high-quality, scalable, and secure software solutions tailored to your specific business needs.</p>
+                <h2>Our Services</h2>
+                <p>We provide comprehensive technology solutions to help businesses thrive in the digital era.</p>
             </div>
             
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">💻</div>
-                    <h3>Custom Development</h3>
-                    <p>Tailor-made software solutions designed specifically for your unique business requirements and challenges.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <svg class="service-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 16H14V20H10V16Z" fill="#3a86ff"/>
+                        <path d="M4 8H8V12H4V8Z" fill="#3a86ff"/>
+                        <path d="M16 8H20V12H16V8Z" fill="#3a86ff"/>
+                        <path d="M11 8H13V12H11V8Z" fill="#3a86ff"/>
+                        <path d="M8 4V8H4V4H8Z" fill="#3a86ff"/>
+                        <path d="M13 4V8H11V4H13Z" fill="#3a86ff"/>
+                        <path d="M16 4V8H20V4H16Z" fill="#3a86ff"/>
+                        <path d="M8 12V16H4V12H8Z" fill="#3a86ff"/>
+                        <path d="M16 12V16H20V12H16Z" fill="#3a86ff"/>
+                    </svg>
+                    <h3>Computer Services</h3>
+                    <p>Comprehensive computer services and data processing solutions to help businesses operate efficiently.</p>
                 </div>
                 
-                <div class="feature-card">
-                    <div class="feature-icon">🚀</div>
-                    <h3>Cutting-Edge Technology</h3>
-                    <p>We use the latest technologies and frameworks to build future-proof applications that scale with your business.</p>
+                <div class="service-card">
+                    <svg class="service-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 6H4V18H20V6Z" stroke="#3a86ff" stroke-width="2"/>
+                        <path d="M4 9H20" stroke="#3a86ff" stroke-width="2"/>
+                        <path d="M8 6V9" stroke="#3a86ff" stroke-width="2"/>
+                        <path d="M8 18V15H16V18" stroke="#3a86ff" stroke-width="2"/>
+                    </svg>
+                    <h3>Software Development</h3>
+                    <p>Custom software solutions tailored to meet your specific business requirements and challenges.</p>
                 </div>
                 
-                <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
-                    <h3>Security Focused</h3>
-                    <p>Our development processes prioritize security at every step, ensuring your data and systems remain protected.</p>
+                <div class="service-card">
+                    <svg class="service-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 6H22V18H2V6Z" stroke="#3a86ff" stroke-width="2"/>
+                        <path d="M12 10C13.1046 10 14 9.10457 14 8C14 6.89543 13.1046 6 12 6C10.8954 6 10 6.89543 10 8C10 9.10457 10.8954 10 12 10Z" fill="#3a86ff"/>
+                        <path d="M18 10C19.1046 10 20 9.10457 20 8C20 6.89543 19.1046 6 18 6C16.8954 6 16 6.89543 16 8C16 9.10457 16.8954 10 18 10Z" fill="#3a86ff"/>
+                        <path d="M6 10C7.10457 10 8 9.10457 8 8C8 6.89543 7.10457 6 6 6C4.89543 6 4 6.89543 4 8C4 9.10457 4.89543 10 6 10Z" fill="#3a86ff"/>
+                        <path d="M12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z" fill="#3a86ff"/>
+                        <path d="M18 14C19.1046 14 20 13.1046 20 12C20 10.8954 19.1046 10 18 10C16.8954 10 16 10.8954 16 12C16 13.1046 16.8954 14 18 14Z" fill="#3a86ff"/>
+                        <path d="M6 14C7.10457 14 8 13.1046 8 12C8 10.8954 7.10457 10 6 10C4.89543 10 4 10.8954 4 12C4 13.1046 4.89543 14 6 14Z" fill="#3a86ff"/>
+                        <path d="M12 18C13.1046 18 14 17.1046 14 16C14 14.8954 13.1046 14 12 14C10.8954 14 10 14.8954 10 16C10 17.1046 10.8954 18 12 18Z" fill="#3a86ff"/>
+                        <path d="M18 18C19.1046 18 20 17.1046 20 16C20 14.8954 19.1046 14 18 14C16.8954 14 16 14.8954 16 16C16 17.1046 16.8954 18 18 18Z" fill="#3a86ff"/>
+                        <path d="M6 18C7.10457 18 8 17.1046 8 16C8 14.8954 7.10457 14 6 14C4.89543 14 4 14.8954 4 16C4 17.1046 4.89543 18 6 18Z" fill="#3a86ff"/>
+                    </svg>
+                    <h3>Public Procurement</h3>
+                    <p>Professional public procurement services to help businesses navigate government contracting processes.</p>
+                </div>
+                
+                <div class="service-card">
+                    <svg class="service-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 19H5C3.89543 19 3 18.1046 3 17V7C3 5.89543 3.89543 5 5 5H8" stroke="#3a86ff" stroke-width="2"/>
+                        <path d="M16 5H19C20.1046 5 21 5.89543 21 7V17C21 18.1046 20.1046 19 19 19H16" stroke="#3a86ff" stroke-width="2"/>
+                        <rect x="8" y="3" width="8" height="18" rx="2" stroke="#3a86ff" stroke-width="2"/>
+                        <path d="M12 17V17" stroke="#3a86ff" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <h3>Business Consulting</h3>
+                    <p>Expert advisory and consulting services to optimize your business operations and strategy.</p>
                 </div>
             </div>
         </div>
     </section>
     
-    <section class="about" id="about">
+    <section class="section about" id="about">
         <div class="container">
             <div class="about-grid">
                 <div class="about-content">
                     <h2>About SoftPlus Tech</h2>
-                    <p>Founded in 2023, SoftPlus Tech has quickly established itself as a leading software development company. We specialize in creating innovative software solutions that help businesses of all sizes thrive in the digital age.</p>
-                    <p>Our team of experienced developers, designers, and project managers work collaboratively to deliver exceptional results on time and within budget. We pride ourselves on our customer-centric approach, ensuring that your vision becomes reality.</p>
+                    <p>Founded in 2010, SoftPlus Tech s.r.o. has established itself as a reliable technology partner for businesses. We specialize in computer services, software development, and consultancy, helping companies leverage technology to achieve their goals.</p>
+                    <p>Our team of experienced professionals is dedicated to delivering high-quality solutions that address the unique challenges of our clients. With a focus on innovation and excellence, we provide comprehensive services that help businesses thrive in today's digital landscape.</p>
                     <a href="#contact" class="btn">Learn More</a>
                 </div>
                 <div>
-                    <img src="/api/placeholder/600/400" alt="Team working together" class="about-img">
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Services</h2>
-                <p>We offer a comprehensive range of software development services to meet all your business needs.</p>
-            </div>
-            
-            <div class="service-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i>📱</i>
-                    </div>
-                    <h3>Mobile App Development</h3>
-                    <p>Native and cross-platform mobile applications for iOS and Android with stunning UI/UX design.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i>🌐</i>
-                    </div>
-                    <h3>Web Development</h3>
-                    <p>Responsive, fast, and secure web applications using modern frameworks and technologies.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i>⚙️</i>
-                    </div>
-                    <h3>Custom Software</h3>
-                    <p>Tailor-made software solutions designed to address your specific business challenges.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i>📊</i>
-                    </div>
-                    <h3>Data Analytics</h3>
-                    <p>Turn your data into actionable insights with our advanced analytics solutions.</p>
+                    <svg class="network-icon" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="200" cy="200" r="40" fill="#3a86ff"/>
+                        <circle cx="100" cy="160" r="30" fill="#3a86ff"/>
+                        <circle cx="300" cy="160" r="30" fill="#3a86ff"/>
+                        <circle cx="140" cy="300" r="35" fill="#3a86ff"/>
+                        <circle cx="260" cy="300" r="35" fill="#3a86ff"/>
+                        <circle cx="340" cy="240" r="25" fill="#3a86ff"/>
+                        <circle cx="60" cy="240" r="25" fill="#3a86ff"/>
+                        <line x1="200" y1="200" x2="100" y2="160" stroke="#141414" stroke-width="3"/>
+                        <line x1="200" y1="200" x2="300" y2="160" stroke="#141414" stroke-width="3"/>
+                        <line x1="200" y1="200" x2="140" y2="300" stroke="#141414" stroke-width="3"/>
+                        <line x1="200" y1="200" x2="260" y2="300" stroke="#141414" stroke-width="3"/>
+                        <line x1="200" y1="200" x2="340" y2="240" stroke="#141414" stroke-width="3"/>
+                        <line x1="200" y1="200" x2="60" y2="240" stroke="#141414" stroke-width="3"/>
+                    </svg>
                 </div>
             </div>
         </div>
@@ -437,7 +493,7 @@
     <section class="cta" id="contact">
         <div class="container">
             <h2>Ready to Transform Your Business?</h2>
-            <p>Contact us today to discuss how SoftPlus Tech can help you achieve your digital goals.</p>
+            <p>Contact us today to discuss how SoftPlus Tech can help you achieve your technology goals.</p>
             <a href="mailto:info@softplustech.com" class="btn btn-light">Get in Touch</a>
         </div>
     </section>
@@ -447,40 +503,29 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <h3>SoftPlus Tech</h3>
-                    <p>Innovative software solutions for businesses of all sizes. We help you leverage technology to grow your business.</p>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
+                    <p>Powering the future through innovative technology solutions. We help businesses leverage technology to grow and succeed.</p>
                 </div>
                 
                 <div class="footer-col">
                     <h3>Services</h3>
                     <ul class="footer-links">
-                        <li><a href="#services">Mobile App Development</a></li>
-                        <li><a href="#services">Web Development</a></li>
-                        <li><a href="#services">Custom Software</a></li>
-                        <li><a href="#services">Data Analytics</a></li>
+                        <li><a href="#services">Computer Services</a></li>
+                        <li><a href="#services">Software Development</a></li>
+                        <li><a href="#services">Public Procurement</a></li>
+                        <li><a href="#services">Business Consulting</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
                     <h3>Contact Us</h3>
-                    <p>123 Tech Street, Innovation City</p>
-                    <p>Phone: +1 (555) 123-4567</p>
+                    <p>Slnečná 11, Malinovo 900 45</p>
+                    <p>IČO: 45 580 341</p>
                     <p>Email: info@softplustech.com</p>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 SoftPlus Tech. All rights reserved.</p>
+                <p>&copy; 2025 SoftPlus Tech s.r.o. All rights reserved. | Company Registration: 45 580 341</p>
             </div>
         </div>
     </footer>
